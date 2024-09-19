@@ -1,0 +1,17 @@
+
+.swiper-container{
+    height: 175px;
+}
+
+
+.swiper-slide {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+
+.swiper-pagination {
+    bottom: 20px; /* Adjust this value to move the pagination lower or higher */
+}

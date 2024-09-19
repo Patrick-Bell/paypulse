@@ -1,0 +1,155 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main dashboard grid layout */
+.dash-grid {
+    display: grid;
+    grid-template-columns: 20% 80%; /* Define two columns with 25% and 75% widths */
+    height: calc(100vh - 85px); /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+}
+
+/* Sidebar styles (left side) */
+.dash-l {
+    border-right: 1px solid rgb(208, 203, 203);
+    background: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+
+
+}
+.dash-l ul{
+    list-style: none;
+}
+.dash-l ul li a{
+    text-decoration: none;
+    color: black;
+}
+.dash-l ul li{
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: rgb(249, 247, 247);
+    border-radius: 10px;
+}
+.dash-l ul li.active {
+    background-color: #1976d2; /* Highlight the active link */
+    font-weight: 800;
+  }
+  .dash-l ul li:hover.active {
+    background-color: #1976d2; /* Highlight the active link */
+  }
+
+  .dash-l ul li.active a {
+    color: white;
+  }
+
+
+.dash-l ul li:hover{
+    background: rgb(211, 210, 210);
+    cursor: pointer;
+}
+
+/* Main content styles (right side) */
+.dash-r {
+    padding: 20px;
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+
+.shifts-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+}
+
+.filter-section {
+    margin-bottom: 10px;
+}
+
+.shift-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    overflow: auto;
+}
+
+.shift-flex {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+.filter-section select {
+    padding: 10px;
+    margin-top: 2px;
+    width: 100%;
+    border-radius: 4px;
+
+}
+
+.no-shifts-text{
+    font-weight: 800;
+    margin: 10px;
+}
+.blur{
+    filter: blur(5px);
+}
+.blur:hover{
+    filter: blur(0px);
+    cursor: pointer;
+}
+
+/* Make it responsive */
+@media screen and (max-width: 1000px) {
+    .dash-l {
+        position: fixed;
+        top: 10; /* Ensure it's aligned properly at the top */
+        left: 0;
+        width: 250px;
+        height: 100%; /* Full height of the screen */
+        background-color: #e9eaeb;
+        z-index: 1000;
+        visibility: hidden;
+        transform: translateX(-100%); /* Move it off-screen initially */
+        transition: transform 0.5s ease-in-out, visibility 0s linear 0.5s; /* Animation of 0.5s */
+    }
+
+    .dash-l ul li {
+        margin: 10px 0;
+        padding: 10px 20px;
+        background: rgb(191, 190, 190);
+    }
+
+    /* When menu is open */
+    .dash-l.open {
+        visibility: visible; /* Make it visible */
+        transform: translateX(0); /* Slide the sidebar in */
+        transition: transform 0.5s ease-in-out, visibility 0s; /* Immediate visibility */
+    }
+    .dash-r{
+        width: 100%;
+    }
+    .dash-grid{
+        grid-template-columns: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    .shift-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.navbar{
+    padding: 20px 25px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+.nav-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+.menu-icon{
+    font-size: 1.5rem;
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+}
