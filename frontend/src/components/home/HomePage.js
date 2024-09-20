@@ -10,6 +10,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import SecurityIcon from '@mui/icons-material/Security';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Slider from "react-slick";
 import { Pagination, Autoplay } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 import { FaTwitter, FaFacebook, FaLinkedinIn } from 'react-icons/fa'; // For Font Awesome
@@ -17,6 +18,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import '../../styles/HomePage.css'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 function HomePage() {
     const navigate = useNavigate();
@@ -26,6 +30,18 @@ function HomePage() {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     
+
+    const settings = {
+        infinite: true,
+        centeredSlides: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 2000,
+        cssEase: "Linear",
+        pauseOnHover: false, // Disable pausing on hover
+    };
 
 
     const handleClick = () => {
@@ -392,7 +408,7 @@ function HomePage() {
            {/* Contact Section */}
 
            <Box id="contact" sx={{ padding: '40px 0' }}>
-            <Container maxWidth="xl">
+            <Container maxWidth="lg">
                 <Typography variant="h4" align="center" sx={{ marginBottom: '20px', fontWeight: 'bold' }}>
                     Contact Us
                 </Typography>
@@ -402,7 +418,7 @@ function HomePage() {
                         aria-controls="address-content"
                         id="address-header"
                     >
-                        <Typography variant="h6">Address</Typography>
+                        <Typography>Address</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -421,7 +437,7 @@ function HomePage() {
                         aria-controls="phone-content"
                         id="phone-header"
                     >
-                        <Typography variant="h6">Phone</Typography>
+                        <Typography>Phone</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -438,7 +454,7 @@ function HomePage() {
                         aria-controls="email-content"
                         id="email-header"
                     >
-                        <Typography variant="h6">Email</Typography>
+                        <Typography>Email</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -451,6 +467,30 @@ function HomePage() {
                 </Accordion>
             </Container>
         </Box>
+
+
+        <div className="slider-container">
+      <Slider {...settings}>
+        <div>
+          <h3>Fuse Universal</h3>
+        </div>
+        <div>
+          <h3>Adidas</h3>
+        </div>
+        <div>
+          <h3>Smart Pension</h3>
+        </div>
+        <div>
+          <h3>Kajuma Community</h3>
+        </div>
+        <div>
+          <h3>IndeedFlex</h3>
+        </div>
+        <div>
+          <h3>Funding Circle</h3>
+        </div>
+      </Slider>
+    </div>
 
 
 

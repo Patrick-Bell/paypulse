@@ -26,7 +26,9 @@
     "react-router-dom": "^6.26.2",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.2",
     "react-toastify": "^10.0.5",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.1.14",
     "tippy.js": "^6.3.7",
     "web-vitals": "^2.1.4"
@@ -57,12 +59,11 @@
   },
   "proxy": "http://localhost:3000",
   "babel": {
-  "presets": [
-    "react-app"
-  ],
-  "plugins": [
-    "@babel/plugin-transform-private-property-in-object"
-  ]
-}
-
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-private-property-in-object"
+    ]
+  }
 }
