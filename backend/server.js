@@ -47,46 +47,6 @@ db.once('open', () => {
     console.log('Connection to MongoDB Successful!')
 })
 
-/*
-app.get('/generate-payslip', authenticateToken, async (req, res) => {
-    try {
-        const userId = req.user.id ? req.user.id : req.user._id;
-        console.log('Getting user ID:', userId);
-
-        const user = await User.findById(userId).populate('shifts');
-        console.log('User with shifts:', user);
-
-        if (!user) {
-            console.log('User not found');
-            return res.status(404).json({ error: 'User not found' });
-        }
-
-        const startOfLastMonth = new Date();
-        startOfLastMonth.setMonth(startOfLastMonth.getMonth() - 1);
-        startOfLastMonth.setDate(1);
-        const endOfLastMonth = new Date(startOfLastMonth);
-        endOfLastMonth.setMonth(endOfLastMonth.getMonth() + 1);
-        endOfLastMonth.setDate(0);
-
-        const shifts = await Shift.find({
-            userId: userId,
-            date: {
-                $gte: startOfLastMonth,
-                $lte: endOfLastMonth
-            }
-        });
-
-        console.log(shifts)
-
-        res.json(shifts); // Send only shifts if that's what you need
-
-    } catch (e) {
-        console.error('Error getting shifts:', e);
-        res.status(500).json({ error: 'Error getting all shifts for user' });
-    }
-});
-*/
-
 // Routes
 app.use('/api', userRoutes)
 app.use('/api', shiftRoutes)

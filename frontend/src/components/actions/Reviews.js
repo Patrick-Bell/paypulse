@@ -115,7 +115,6 @@ function Review({ handleSubmit, submit }) {
                 onClick={onSubmit}
                 disabled={formData.ratingValue === 0 || formData.reviewText.trim() === ""}
                 sx={{
-                  padding: 1.5,
                   borderRadius: 2,
                   backgroundColor: '#1976d2',
                   '&:hover': {
