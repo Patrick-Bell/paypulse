@@ -30,7 +30,7 @@ app.use(cors({
     credentials: true
 }));
 
-app.use(express.static(path.join(__dirname, 'build'))); // Serve static files
+app.use(express.static(path.join(__dirname, 'build'))); // Serve static files in backend
 
 // Mongo Connection
 
