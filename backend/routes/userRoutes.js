@@ -76,7 +76,7 @@ router.post('/login', async (req, res) => {
             sameSite: 'strict', // changed from Lax
             maxAge: 3600000, // 1 hour
             path: '/',
-            domain: 'localhost'
+            //domain: 'localhost'
         });
 
         res.status(200).json({ message: 'Login successful' });
