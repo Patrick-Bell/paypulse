@@ -26,11 +26,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:3000', // Adjust based on your frontend URL
+    origin: 'https://paypulse-v3db.onrender.com', // Adjust based on your frontend URL
     credentials: true
 }));
 
-app.use(express.static(path.join(__dirname, 'frontend', 'build'))); // Serve static files
+app.use(express.static(path.join(__dirname, 'build'))); // Serve static files
 
 // Mongo Connection
 
@@ -61,7 +61,7 @@ app.use('/api', p60Routes)
 
 // Handle any other routes (like /matches) and serve the frontend api
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 
