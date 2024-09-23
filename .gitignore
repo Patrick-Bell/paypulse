@@ -6,8 +6,6 @@ frontend/node_modules/.cache/
 backend/node_modules/.cache/
 
 # Ignore build directories
-frontend/build/
-backend/build/
 
 # Ignore package-lock.json and yarn.lock if you don't need them (optional)
 #frontend/package-lock.json
