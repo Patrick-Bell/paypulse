@@ -469,28 +469,7 @@ function HomePage() {
         </Box>
 
 
-        <div className="slider-container">
-      <Slider {...settings}>
-        <div>
-          <h3>Fuse Universal</h3>
-        </div>
-        <div>
-          <h3>Adidas</h3>
-        </div>
-        <div>
-          <h3>Smart Pension</h3>
-        </div>
-        <div>
-          <h3>Kajuma Community</h3>
-        </div>
-        <div>
-          <h3>IndeedFlex</h3>
-        </div>
-        <div>
-          <h3>Funding Circle</h3>
-        </div>
-      </Slider>
-    </div>
+      
 
 
 
